@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title> dex-os kernel 1.02 changelog </title>
+</head>
+<body>
+
+<h3><b>dex-os v 1.02 (April 12, 2004)</b></h3>
+
+<p>-> Fixed wait bug in ELF module</p>
+<p>-> kernel size now correctly detected in startup.asm (Now I know ".TEXT" != ".text" )</p>
+<p>TODO:</p>
+<p>-> possible VFS fclose bug: causes a fault, it seems to be connected somewhat to the dlfree function</p>
+
+<p>-> iso9660 fs bug...reads wrong sectors for some CD drives and CDs.</p>
+<p>-> extension modules still cannot be unloaded reliably</p>
+<p>-> others......</p>
+
+<h3><b>dex-os v 1.01 (April 9, 2004)</b></h3>
+
+
+<p>-> Fixed race condition in createkthread() (fixes TSS error problems in Bochs)</p>
+<p>-> Fixed ELF loader module</p>
+<p>-> Fixed mem command in the console</p>
+<p>-> Added device manager error database module (devmgr_error.c/h)</p>
+
+<p>TODO:</p>
+
+<p>-> iso9660 fs bug...reads wrong sectors for some CD drives and CDs.</p>
+<p>-> extension modules still cannot be unloaded reliably</p>
+<p>-> others......</p>
+</body>
+</html>

@@ -1,0 +1,127 @@
+DDDD     EEEEE  XX     XX           OOOOOOOO   SSSSSS
+D   DD   E        XX XX             OO    OO   SS
+D   DD   EEEEE      X      -------  OO    OO   SSSSSS
+D   DD   E	      XX XX             OO    OO       SS
+DDDD     EEEEE  XX     XX           OOOOOOOO   SSSSSS
+
+
+Author: Joseph Emmanuel DL Dayo
+e-mail: j_dayo@yahoo.com, joseph.dayo@gmail.com
+
+This is the README.1ST file for DEX-OS 1.0 Beta
+
+DESCRIPTION
+===========
+	DEX is an operating system specifically designed for educational and 
+research use. The DEX Operating system allows for the dynamic 
+reconfiguration and customization of various system services 
+using concepts found in extensible operating systems. Additionally it 
+aims to create an operating system design that would be easy to 
+understand while having features that are common with today’s 
+modern operating systems. Unlike other small operating systems, 
+DEX-OS is powerful enough to support simple applications that 
+require multithreading and file management. DEX-OS was developed in C 
+and runs on PCs with 80386 processors or higher. The ultimate goal 
+of this operating system is to achieve zero static inter-module calls, 
+not even the scheduler or virtual memory manager is permanent 
+and could be changed dynamically.
+
+	In order to achieve this "plug-in" like capability, there is a 
+need to generate generalizations about the interfaces of
+the various operating system modules. Like for example, what features 
+should a scheduler provide, or what methods or function calls should 
+a virtual memory manager provide at a minimum. This part of the 
+operating system is still under development, and only the scheduler and
+the kernel malloc function is dynamic . Theses modules can be incorporated 
+into the system through the means of Dynamic Link Libraries or 
+shared objects, much like how a device driver would.
+
+
+
+THE DISTRIBUTION
+================
+
+The DEX source distribution is divided into the following subdirectories:
+
+/console		- Contains the modules that will handle virtual consoles
+			  and the built-in text-mode shell
+/devmgr		- Contains the device manager and the extension manager
+/dexapi		- The DEX Application Programs Interface manager
+/docs			- additional documentation
+/filesystem		- Contains the filesystem drivers 
+/grub		      - Contains the grub bootloader binaries
+/hardware		- Contains device drivers for the various hardware found in 
+			  an 80x86 system.
+/iomgr		- Contains the IO manager module 
+/memory		- Contains page management code and kernel malloc functions
+/module		- Contains the module loader for various executables and 
+			  libraries
+/process		- Contains process management code
+/startup		- Contains startup NASM assmebly files and
+			  libraries
+/stdlib		- Contains various standard C library functions
+/vfs			- The Virtual File System (VFS) module
+/vmm			- The Virtual Memory Management module
+
+The main file is kernel32.c and some of the files are directly included in it.
+
+INSTALLATION
+=============
+For the binary only release, the file kernel32.bin is multiboot compliant and
+multiboot compliant bootloaders like GRUB can be used. Please refer to the GRUB
+documentation for instructions on installing the GRUB bootloader on a FAT12
+floppy disk.
+
+See the user's manual for other details.
+
+EDIT: kernel32.bin is now compressed using gzip therefore the file
+should now be kernel32.bin.gz. The modification is relfected in the GRUB
+configuration file.
+
+COMPILING THE SOURCE CODE
+=========================
+
+For Windows/DOS
+---------------
+nasmw - netwide free assember 0.98 or greater
+DJGPP gcc - The gcc compiler from DJ Delories
+gzip - gzip compression utility
+
+Simply invoke the make-kernel.bat batch file.
+
+For Unix systems
+----------------
+The following utilities must be available
+nasm - netwide free assembler 0.98 or greater
+gcc - GNU C compiler and associated utilities
+gzip - gzip compression utility
+make - make file
+
+There is an included makefile in the source, to compile just invoke
+make. 
+
+This will output kernel32.bin.gz which contains the compressed
+dex-os kernel. This kernel can be booted by placing
+the kernel32.bin.gz file in a floppy disk with grub installed
+and modifying the menu.lst file to reflect the location of
+kernel32.bin.gz (A menu.lst file is included in the source
+package as well as the GRUB loaders in the GRUB folder)
+
+
+POSSIBLE ERRORS
+===============
+
+Error: ld returns the following error message:
+   		   
+ld: PE operations on non PE file. 
+
+Reason:
+	   
+The version of gcc or ld is not capable of producing BINARY
+output formats. You must obtain the cross compiler capable
+version of gcc and/or ld to be able to link the object files
+together. Check using ld --help to determine the supported
+output formats.
+
+DJGPP is capable of producing BINARY formats out
+of the box.

@@ -1,0 +1,4 @@
+ # Entry 0:
+        title   DEX Extensible Operating System 1.03
+        root    (fd0)
+        kernel  /kernel32.bin.gz

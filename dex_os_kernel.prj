@@ -1,0 +1,218 @@
+# Anjuta Version 1.2.4a 
+Compatibility Level: 1 
+
+<PROJECT_DESCRIPTION_START>
+The DEX Extensible Operating System<PROJECT_DESCRIPTION_END>
+<CONFIG_PROGS_START>
+<CONFIG_PROGS_END>
+<CONFIG_LIBS_START>
+<CONFIG_LIBS_END>
+<CONFIG_HEADERS_START>
+<CONFIG_HEADERS_END>
+<CONFIG_CHARACTERISTICS_START>
+<CONFIG_CHARACTERISTICS_END>
+<CONFIG_LIB_FUNCS_START>
+<CONFIG_LIB_FUNCS_END>
+<CONFIG_ADDITIONAL_START>
+<CONFIG_ADDITIONAL_END>
+<CONFIG_FILES_START>
+<CONFIG_FILES_END>
+<MAKEFILE_AM_START>
+<MAKEFILE_AM_END>
+
+props.file.type=project
+
+anjuta.version=1.2.4a
+anjuta.compatibility.level=1
+
+project.name=dex_os_kernel
+project.type=GENERIC
+project.target.type=EXECUTABLE
+project.version=1.035
+project.author=Joseph Emmanuel Dayo
+project.source.target=i386
+project.has.gettext=0
+project.gui.command=
+project.programming.language=C
+project.excluded.modules=intl
+
+project.config.extra.modules.before=
+project.config.extra.modules.after=
+project.config.blocked=1
+project.config.disable.overwriting=1 1 1 1 1 1 1 1 1 
+
+project.menu.entry=dex_os_kernel Version 1.035
+project.menu.group=Application
+project.menu.comment=dex_os_kernel Version 1.035
+project.menu.icon=
+project.menu.need.terminal=0
+
+project.configure.options=
+anjuta.program.arguments=
+preferences.build.option.jobs=0
+preferences.build.option.silent=0
+preferences.build.option.autosave=0
+preferences.make=make
+preferences.build.option.keep.going=1
+preferences.build.option.warn.undef=0
+preferences.autoformat.custom.style= -i8 -sc -bli0 -bl0 -cbi0 -ss
+preferences.indent.opening=0
+preferences.autoformat.disable=0
+preferences.indent.automatic=1
+preferences.use.tabs=1
+preferences.indent.size=4
+preferences.tabsize=4
+preferences.indent.closing=0
+
+module.include.name=.
+module.include.type=
+module.include.files=\
+	filesystem/fat12.h\
+	filesystem/iso9660.h\
+	filesystem/devfs.h\
+	iomgr/iomgr.h\
+	iomgr/iosched.h\
+	devmgr/extensions.h\
+	devmgr/bridges.h\
+	devmgr/devmgr_error.h\
+	devmgr/dex32_devmgr.h\
+	dexapi/dex32API.h\
+	vfs/vfs_core.h\
+	vfs/vfs_aux.h\
+	dextypes.h\
+	memory/kheap.h\
+	memory/dexmem.h\
+	module/module.h\
+	module/java_nativevm/javatypes.h\
+	hardware/ATA/ATAIOPD.h\
+	hardware/ATA/ATAIO.h\
+	hardware/ATA/ataiosub.h\
+	hardware/floppy/floppy.h\
+	hardware/hardware.h\
+	hardware/vga/dexvga.h\
+	hardware/vga/bitmap.h\
+	hardware/chips/speaker.h\
+	hardware/chips/ports.h\
+	hardware/exceptions.h\
+	hardware/keyboard/keyboard.h\
+	stdlib/time.h\
+	stdlib/dexstdlib.h\
+	stdlib/stdlib.h\
+	stdlib/qsort.h\
+	startup/multiboot.h\
+	process/event.h\
+	process/process.h\
+	process/pdispatch.h\
+	process/scheduler.h\
+	process/environment.h\
+	process/sync.h\
+	console/dexio.h\
+	console/script.h\
+	console/dex_DDL.h\
+	console/console.h\
+	console/foreground.h
+
+module.source.name=.
+module.source.type=
+module.source.files=\
+	filesystem/fat12.c\
+	filesystem/iso9660.c\
+	filesystem/devfs.c\
+	iomgr/iosched.c\
+	devmgr/devmgr_error.c\
+	devmgr/extension.c\
+	devmgr/dex32_devmgr.c\
+	devmgr/bridges.c\
+	kernel32.c\
+	dexapi/dex32API.c\
+	vfs/vfs_aux.c\
+	vfs/vfs_core.c\
+	memory/dlmalloc.c\
+	memory/bsdmallo.c\
+	memory/dexmem.c\
+	memory/kheap.c\
+	memory/dexmem_pae.c\
+	memory/dexmalloc.c\
+	module/coff.c\
+	module/elf_module.c\
+	module/pe_module.c\
+	module/java_nativevm/java_classloader.c\
+	module/java_nativevm/java_vm.c\
+	module/b32.c\
+	module/module.c\
+	vmm/vmm.c\
+	hardware/hardware.c\
+	hardware/ATA/ATAIOINT.C\
+	hardware/ATA/ATAIOPIO.C\
+	hardware/ATA/ide.c\
+	hardware/ATA/ATAIOTMR.C\
+	hardware/ATA/ATAIOSUB.C\
+	hardware/ATA/ATAIOTRC.c\
+	hardware/ATA/ATAIOREG.c\
+	hardware/ATA/ATAIOPCI.c\
+	hardware/floppy/floppy.c\
+	hardware/exceptions.c\
+	hardware/dexapm.c\
+	hardware/vga/dexvga.c\
+	hardware/vga/bitmap.c\
+	hardware/chips/irqhandlers.c\
+	hardware/chips/ports.c\
+	hardware/chips/speaker.c\
+	hardware/chips/dllmain.c\
+	hardware/pcibus/pci_database.c\
+	hardware/pcibus/dexpci.c\
+	hardware/keyboard/keyboard.c\
+	stdlib/qsort.c\
+	stdlib/error.c\
+	stdlib/time.c\
+	stdlib/stdlib.c\
+	startup/multiboot.c\
+	process/dex_taskmgr.c\
+	process/scheduler.c\
+	process/sync.c\
+	process/environment.c\
+	process/pdispatch.c\
+	process/process.c\
+	console/script.c\
+	console/foreground.c\
+	console/dexio.c\
+	console/dex_DDL.c\
+	console/console.c
+
+module.pixmap.name=.
+module.pixmap.type=
+module.pixmap.files=
+
+module.data.name=.
+module.data.type=
+module.data.files=
+
+module.help.name=.
+module.help.type=
+module.help.files=
+
+module.doc.name=.
+module.doc.type=
+module.doc.files=\
+	changelog.html
+
+module.po.files=
+
+compiler.options.supports=
+compiler.options.include.paths=\
+	.\
+	..
+compiler.options.library.paths=
+compiler.options.libraries=
+compiler.options.libraries.selected=
+compiler.options.defines=\
+	HAVE_CONFIG_H
+compiler.options.defines.selected=
+compiler.options.warning.buttons=0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 
+compiler.options.optimize.buttons=0 0 1 0 
+compiler.options.other.buttons=1 0 
+compiler.options.other.c.flags=
+compiler.options.other.l.flags=
+compiler.options.other.l.libs=
+
+project.src.paths=

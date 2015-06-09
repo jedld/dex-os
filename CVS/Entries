@@ -1,0 +1,26 @@
+/GPL.txt/1.1.1.1/Sat Apr 17 09:17:20 2004//
+/changelog.html/1.1.1.1/Sat Apr 17 09:17:07 2004//
+/dextypes.h/1.2/Sun Apr 18 01:03:50 2004//
+/irqwrap.asm/1.1.1.1/Sat Apr 17 09:17:21 2004//
+/lscript.txt/1.1.1.1/Sat Apr 17 09:17:33 2004//
+/mapfile.txt/1.10/Sun Jun  6 13:37:29 2004//
+/syscall.asm/1.1.1.1/Sat Apr 17 09:18:15 2004//
+D/console////
+D/devmgr////
+D/dexapi////
+D/docs////
+D/filesystem////
+D/grub////
+D/hardware////
+D/iomgr////
+D/memory////
+D/module////
+D/process////
+D/startup////
+D/stdlib////
+D/vfs////
+D/vmm////
+/kernel32.c/1.10/Sun Aug 20 04:31:08 2006//
+/make-kernel32.bat/1.1/Sun Aug  6 15:10:47 2006//
+/makefile/1.1/Sun Aug 20 05:07:28 2006//
+/readme.1st/1.3/Sun Aug 20 05:52:53 2006//

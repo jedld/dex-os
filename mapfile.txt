@@ -1,0 +1,1287 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+fg_out              0x4               kernel32.o
+curp                0x31c             kernel32.o
+mount_table         0x3fc             kernel32.o
+bridges_call        0x4               kernel32.o
+kb_busywait         0x44              kernel32.o
+pagedir1            0x4               kernel32.o
+homedir             0x4               kernel32.o
+time_systime        0x20              kernel32.o
+schedp              0x4               kernel32.o
+schedpPCB           0x31c             kernel32.o
+foreground          0x4               kernel32.o
+errno               0x4               kernel32.o
+ps_scheduler        0x158             scheduler.o
+reg_atapi_reg_fr    0x1               kernel32.o
+devmgr_statuslist   0x4               kernel32.o
+op_success          0x4               kernel32.o
+fat_deviceid        0x4               fat.o
+devmgr_busy         0x44              kernel32.o
+perf_entitytable    0x32c8            perf.o
+fg_busywait         0x44              kernel32.o
+reg_atapi_reg_dh    0x1               kernel32.o
+IOrequest_busy      0x44              iomgr.o
+oldkeybfocus        0x4               kernel32.o
+esc_2               0x3               kernel32.o
+pfPCB_copy          0x31c             kernel32.o
+ide_partitions      0xa0              kernel32.o
+portinfo            0x4               kernel32.o
+kernelPCB           0x31c             kernel32.o
+dma_pci_prd_addr    0x4               kernel32.o
+fg_vconsoles        0x50              kernel32.o
+fdcbuf              0x201             kernel32.o
+consoleDDL          0x4               kernel32.o
+fg_fginfo           0x4               kernel32.o
+fg_pid              0x4               kernel32.o
+cacheptr            0x4               kernel32.o
+reg_atapi_cp_size   0x4               kernel32.o
+dex32_loaders       0x50              kernel32.o
+memamount           0x4               kernel32.o
+tmr_cmd_time_out_time
+                    0x4               kernel32.o
+irq_attachlist      0x40              kernel32.o
+esc_1               0x3               kernel32.o
+portstatus          0x4               kernel32.o
+pcibios             0x6               kernel32.o
+int_intr_flag       0x4               kernel32.o
+hardware_mycpu      0x58              kernel32.o
+vfs_busy            0x44              kernel32.o
+memory_map          0x4               kernel32.o
+api_syscalltable    0xc00             kernel32.o
+pfPCB               0x31c             kernel32.o
+reg_config_info     0x8               kernel32.o
+taskmgrfg           0x4               kernel32.o
+pio_last_read       0xa               kernel32.o
+kbd_status          0x4               kernel32.o
+ps_schedid          0x4               scheduler.o
+sPCB                0x31c             kernel32.o
+pio_reg_addrs       0x28              kernel32.o
+ps_kernelfpustate   0x6c              kernel32.o
+keyPCB              0x31c             kernel32.o
+kernel_systeminfo   0x18              kernel32.o
+reg_atapi_reg_sn    0x1               kernel32.o
+cur                 0x4               iomgr.o
+sched_phead         0x4               scheduler.o
+tm_before           0x4               kernel32.o
+ide_drivelist       0x150             kernel32.o
+IOjob               0x4               iomgr.o
+processmgr_busy     0x44              kernel32.o
+reg_atapi_delay_flag
+                    0x4               kernel32.o
+mallocbusy          0x44              kernel32.o
+pcibiosentry        0x6               kernel32.o
+devmgr_devlist      0x4               kernel32.o
+reg_cmd_info        0x4c              kernel32.o
+semaphore_head      0x4               kernel32.o
+dma_pci_sff_reg_addr
+                    0x4               kernel32.o
+taskmgr_fgid        0x4               kernel32.o
+plast               0x4               kernel32.o
+reg_slow_xfer_flag  0x4               kernel32.o
+tlb_address         0x4               kernel32.o
+reg_atapi_reg_sc    0x1               kernel32.o
+pio_last_write      0xa               kernel32.o
+reg_atapi_cp_data   0x10              kernel32.o
+ps_fpustate         0x6c              kernel32.o
+taskmgrout          0x4               kernel32.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000100000    0x2b000
+                0x0000000000100000                code = .
+                0x0000000000100000                _code = .
+                0x0000000000100000                __code = .
+ *(.text)
+ .text          0x0000000000100000      0x2e6 startup.o
+                0x00000000001002de                _reset_gdtr
+                0x0000000000100000                _startup
+ *fill*         0x00000000001002e6        0x2 00
+ .text          0x00000000001002e8    0x21d21 kernel32.o
+                0x0000000000120b60                setinterruptvector
+                0x000000000011045c                putchar
+                0x00000000001181c6                ps_changename
+                0x000000000010fadc                getmonthname
+                0x000000000010145d                Dex32ConfigureDDL
+                0x00000000001057fa                recalibrate
+                0x000000000010a8ee                searchfxnlib
+                0x000000000011533c                devmgr_getdevicebyname
+                0x0000000000111120                strcpy
+                0x0000000000110bba                nextln
+                0x00000000001174e6                ps_dequeue
+                0x000000000011fdba                hlt
+                0x000000000011dabb                ide_getdriveinfo
+                0x000000000010c536                pd_dispatched
+                0x0000000000115321                devmgr_tweak_by_addr
+                0x0000000000120e6e                dex32_copy_on_write
+                0x0000000000118902                dex32_wait
+                0x0000000000112923                pause
+                0x000000000010d495                console_ls_sortname
+                0x0000000000108e45                createfile
+                0x000000000010d2db                prompt_parser
+                0x0000000000117fbc                createkthread
+                0x000000000010484b                bsdmalloc
+                0x00000000001103b1                print
+                0x0000000000106d8c                vfs_flushbuffer
+                0x0000000000118e27                taskswitcher
+                0x0000000000121208                dex32_reserve
+                0x000000000011664b                fg_next
+                0x000000000011041f                putcEX
+                0x0000000000110a72                printf
+                0x0000000000117b38                dex32_asyncproc
+                0x000000000011b38c                pio_drq_block_out
+                0x00000000001109bc                vsprintf
+                0x0000000000107f7b                fcopy
+                0x0000000000110abc                vDDLprintf
+                0x0000000000110447                clrscr
+                0x0000000000103f96                dlcalloc
+                0x0000000000111a48                settogglebits
+                0x0000000000112959                kb_keypressed
+                0x00000000001165ed                fg_prev
+                0x000000000010e1f7                show_history
+                0x00000000001101d0                sety
+                0x00000000001131d2                pci_enable_device
+                0x0000000000121b29                dex32_startup
+                0x0000000000102117                invalid_opcode
+                0x000000000010d445                console_ls_sortsize
+                0x000000000010a4fd                module_getfxn
+                0x0000000000118ae6                dex32_killkthread_name
+                0x0000000000101d3b                Dex32FreeDDL
+                0x000000000010a208                conexpname
+                0x0000000000113902                divide_error
+                0x0000000000104c99                flop_getblocksize
+                0x00000000001019ac                Dex32UpdateCursor
+                0x0000000000100327                inportw
+                0x0000000000120e73                dex32_copy_pagedirU
+                0x00000000001083fc                fdelete
+                0x000000000012039e                getphys
+                0x000000000011167e                memmove
+                0x00000000001210d0                dex32_copy_pagedir
+                0x0000000000120431                dex32_freeuserpagetable
+                0x0000000000119fd6                api_init
+                0x000000000011bc59                reg_non_data_lba
+                0x0000000000109a9d                getfullpath
+                0x000000000010fdc7                getprecisetime
+                0x0000000000104ab2                bsdrealloc
+                0x000000000011b4f0                pio_rep_inword
+                0x00000000001151b5                devmgr_setlock
+                0x00000000001091b1                vfs_searchname_lk
+                0x0000000000110237                puttext
+                0x0000000000100ff7                set_text_mode
+                0x000000000011e5ca                ide_registerpartitions
+                0x0000000000109531                vfs_searchname
+                0x0000000000116569                fg_toggle
+                0x000000000011d603                sub_atapi_delay
+                0x0000000000117ec3                getmessage
+                0x0000000000105497                fdctimer
+                0x000000000011e7ee                ide_sendmessage
+                0x0000000000108973                vfs_createnode
+                0x000000000010861c                findfile
+                0x0000000000109a11                getpath
+                0x0000000000101fd8                stack_error
+                0x000000000011d80f                ide_interpret_config
+                0x0000000000101449                Dex32CreateDDL
+                0x00000000001017d6                Dex32ScrollUp
+                0x000000000011f6fc                vfs_removepathcut
+                0x00000000001056e6                reset
+                0x000000000010cab5                meminfo
+                0x00000000001070e4                vfs_unmount_device
+                0x0000000000120dcb                dex32_sbrk
+                0x0000000000106c1c                vfs_writechar
+                0x00000000001018cd                Dex32NextLn
+                0x0000000000110ae6                DDLprintf
+                0x0000000000115f3f                qsort
+                0x000000000011511a                devmgr_copyinterface
+                0x00000000001171c7                ps_shutdown
+                0x0000000000107adc                fgets
+                0x000000000012194d                vmm_init
+                0x000000000011b25f                pio_outbyte
+                0x000000000011db9e                ide_writesectors
+                0x0000000000115402                devmgr_ioctl
+                0x00000000001217f8                dex_free
+                0x000000000010bed0                b32_loadusermodule
+                0x00000000001002e8                inportb
+                0x00000000001136fb                pci_sendmessage
+                0x0000000000113fe5                pagefaulthandler
+                0x000000000010059c                ports_init
+                0x000000000011825b                dex32_exitprocess
+                0x00000000001074bf                vfs_openfile
+                0x0000000000105e32                fdc_rw_hts
+                0x0000000000104d38                invalidatecache
+                0x0000000000110b69                scrollup
+                0x000000000011b42e                pio_rep_inbyte
+                0x000000000011f53e                vfs_addpathcut
+                0x0000000000116524                fg_init
+                0x0000000000113579                detect_pci_bios
+                0x000000000011163a                memcpy
+                0x000000000011f8ad                vfs_listdir
+                0x000000000011daac                ide_irqhandler
+                0x0000000000120595                freelinearloc
+                0x000000000011b0e3                pio_set_iobase_addr
+                0x00000000001151f5                devmgr_getlock
+                0x0000000000109995                swapchar
+                0x000000000010cbde                user_fork
+                0x000000000010791e                vfs_readline
+                0x00000000001182d3                kill_process
+                0x0000000000115357                devmgr_flushblocks
+                0x00000000001058cf                log_disk
+                0x0000000000120a75                setcallgate
+                0x0000000000104e74                flushcache
+                0x00000000001115d4                tolower
+                0x00000000001078cf                feof
+                0x000000000011bff1                reg_pio_data_in
+                0x000000000010a9a4                patchimportedfunction
+                0x000000000011fb8e                malloc
+                0x00000000001166d0                fg_getinfo
+                0x000000000011dddc                ide_cdrom_eject
+                0x00000000001156e2                extension_init
+                0x0000000000120777                dex32_setpageattb
+                0x00000000001182bf                sleep
+                0x0000000000104460                dlmalloc_trim
+                0x000000000011417a                exc_recover
+                0x0000000000107c46                vfs_getstat
+                0x000000000011fda7                stopints
+                0x000000000011522f                devmgr_finddevice
+                0x00000000001046a7                dlmallopt
+                0x0000000000119793                dex32_locktasks
+                0x0000000000120255                getvirtaddress
+                0x0000000000116724                fg_getmyinfo
+                0x000000000010c172                java_loadusermodule
+                0x00000000001215de                mem_register
+                0x00000000001159f0                extension_checkmodule
+                0x0000000000112db4                kb_sendmessage
+                0x0000000000109b41                showpath
+                0x0000000000121106                dex32_commitblock
+                0x0000000000102047                boundscheck
+                0x0000000000114d00                devmgr_identify
+                0x0000000000101bc8                Dex32PutChar
+                0x0000000000104a5c                bsdfree
+                0x000000000010e247                console_execute
+                0x0000000000111de7                write_kbd
+                0x0000000000118603                create_semaphore
+                0x0000000000101d8f                dex32apm_init
+                0x000000000010cbcb                delfile
+                0x000000000011fa0e                rmdir
+                0x00000000001011b8                dex32vga_setgmode
+                0x00000000001202ab                xmaplineartophysical
+                0x0000000000120355                dex32_stopints
+                0x0000000000105288                sendbyte
+                0x000000000011970e                totalprocess
+                0x0000000000110b97                update_cursor
+                0x0000000000100512                ports_read
+                0x000000000011ffd6                mempush
+                0x00000000001020f2                coprocessor
+                0x0000000000110bcf                isspace
+                0x0000000000117200                getpprocessid
+                0x0000000000118c29                addmemusage
+                0x000000000011b5ed                pio_rep_outdword
+                0x000000000011187f                dex32_set_tm_state
+                0x0000000000107894                fflush
+                0x000000000011e2a0                ide_uni_write_block
+                0x0000000000101bac                Dex32SetX
+                0x0000000000116fb7                script_load
+                0x0000000000119007                show_process_stat
+                0x00000000001020a8                overflow
+                0x0000000000110193                gety
+                0x000000000012007e                maplineartophysical
+                0x0000000000101c2a                Dex32PutText
+                0x00000000001083be                vfs_removefile
+                0x0000000000116586                fg_setforeground
+                0x000000000010f765                console_main
+                0x0000000000110991                vsprintf_help
+                0x000000000010fdbd                time_gettime
+                0x000000000010136b                vga_init
+                0x000000000010fecf                time_getmycputime
+                0x0000000000114753                getcpumodel
+                0x0000000000112bd7                kb_dohotkey
+                0x00000000001089d7                vfs_isvalidname
+                0x0000000000122004                end_func
+                0x0000000000118d5e                ps_switchto
+                0x000000000011d1c4                sub_trace_command
+                0x00000000001059ba                read_block
+                0x00000000001117c6                xtoa
+                0x000000000011b2c3                pio_outword
+                0x0000000000118d0d                copyprocessmemory
+                0x0000000000102161                ungetcx
+                0x0000000000114b60                devmgr_sendmessage
+                0x0000000000118839                dex32_getname
+                0x0000000000111dc3                keyboardflush
+                0x000000000011029a                outputchar
+                0x0000000000101852                Dex32MoveCursor
+                0x000000000011df10                ide_cdromreadsectors
+                0x0000000000109c40                coff_loadusermodule
+                0x0000000000111f7b                kb_setleds
+                0x000000000011fe6c                mem_detectmemory
+                0x000000000011b628                WAIT400NS
+                0x000000000010047c                ports_write
+                0x00000000001043d7                dlvalloc
+                0x00000000001171f0                getprocessid
+                0x0000000000112b98                kb_dequeue
+                0x000000000011bf72                reg_pio_data_in_lba
+                0x000000000010a1ef                win32_unimplemented
+                0x00000000001040ca                dlcfree
+                0x0000000000117210                createthread
+                0x0000000000114f4e                devmgr_showdevices
+                0x0000000000120b03                dex32_setbase
+                0x0000000000118698                get_processlist
+                0x000000000011b48f                pio_rep_outbyte
+                0x0000000000110c89                strtol
+                0x000000000011e37e                ide_read_block_partition
+                0x00000000001104b8                do_printf
+                0x000000000011680a                fg_exit
+                0x0000000000112ac7                getchw
+                0x0000000000117da2                sendmessage
+                0x0000000000119f52                api_removesystemcall
+                0x0000000000101618                dd_swaptomemory
+                0x0000000000115c9e                env_unsetenv
+                0x0000000000116cd4                bridges_ps_scheduler
+                0x000000000010954c                vfs_movefile
+                0x000000000011ff8b                mempop
+                0x000000000011fdad                startints
+                0x00000000001129b5                getch
+                0x0000000000106fac                vfs_checkdirused
+                0x0000000000107cd3                rename
+                0x0000000000106406                vfs_init
+                0x0000000000110160                io_setscroll
+                0x000000000011b2ea                pio_drq_block_in
+                0x000000000011688d                fg_showmenu
+                0x000000000010d2ce                console
+                0x0000000000111387                strrchr
+                0x000000000010774b                vfs_getcwd
+                0x00000000001197a7                dex32_unlocktasks
+                0x0000000000101790                Dex32Clear
+                0x000000000011e06a                ide_cdromgetblocksize
+                0x0000000000121416                mem_init
+                0x000000000012051a                freeuserheap
+                0x0000000000121187                dex32_reserveblock
+                0x0000000000112b0d                installkeyboard
+                0x0000000000110f7a                strsort
+                0x000000000010066c                read_regs
+                0x000000000011d736                partition_interpret_table
+                0x0000000000120402                getpagetablephys
+                0x000000000010c5ed                process_dispatcher
+                0x0000000000111875                dex32_get_tm_state
+                0x0000000000107be7                fstat
+                0x0000000000115762                extension_override
+                0x00000000001130dc                pci_find_capability
+                0x00000000001039d5                dlrealloc
+                0x000000000011101d                strcat
+                0x000000000011dd42                ide_cdrom_unlock
+                0x000000000010993b                changedirectory
+                0x0000000000107825                closeallfiles
+                0x0000000000110a48                vprintf
+                0x000000000010d117                loadlib
+                0x0000000000118276                dex32_killkthread
+                0x000000000010c59a                pd_ok
+                0x00000000001137e6                init_pci
+                0x00000000001129e4                keyboard_wait
+                0x0000000000119220                process_pid_sorter
+                0x000000000010983c                chdir
+                0x0000000000104ca3                flop_initcache
+                0x00000000001185de                ps_user_kill
+                0x0000000000101883                Dex32SetTextBackground
+                0x000000000010d132                console_showfile
+                0x0000000000107b80                vfs_fillstat
+                0x0000000000100350                ports_openport
+                0x000000000011e074                ide_uni_get_bytes_per_block
+                0x0000000000106a53                vfs_readchar
+                0x000000000010abd5                pe_loadusermodule
+                0x000000000012027c                getvirtaddress2
+                0x0000000000118c64                getprocessmemory
+                0x000000000011edc4                ide_setupinterface
+                0x0000000000107db2                fseek
+                0x0000000000101f26                dex32_irqcntl
+                0x000000000011dca8                ide_cdrom_lock
+                0x0000000000118e16                taskswitch
+                0x0000000000114f16                devmgr_setcontext
+                0x00000000001040dd                dlindependent_calloc
+                0x000000000010a615                module_listfxn
+                0x000000000011b5b2                pio_rep_indword
+                0x00000000001138a2                GPFhandler
+                0x00000000001184ca                kill_thread
+                0x000000000010033a                outportb
+                0x0000000000121cb9                dex_kernel32
+                0x0000000000116857                fg_getkeyboardowner
+                0x000000000010ce04                exec
+                0x0000000000110ec1                memchr
+                0x00000000001002fb                inportl
+                0x0000000000109b63                file_showopenfiles
+                0x000000000010410c                dlindependent_comalloc
+                0x00000000001077bc                file_ok
+                0x00000000001015cb                Dex32SetProcessDDL
+                0x000000000011881a                ps_findprocess
+                0x000000000010cc8d                user_execp
+                0x00000000001188bc                dex32_getparametersinfo
+                0x0000000000101e40                dex32apm_off
+                0x0000000000102083                breakpoint
+                0x0000000000117dd2                sendmessageEX
+                0x000000000011d3b6                sub_select
+                0x000000000011f874                vfs_ispathcut
+                0x0000000000111425                strstr
+                0x000000000010213c                debug_error
+                0x0000000000100398                ports_close
+                0x000000000011571e                extension_getname
+                0x00000000001171db                signal
+                0x000000000010fc08                datetostr
+                0x000000000010b572                elf_loadmodule
+                0x000000000011392f                exc_dumpflags
+                0x0000000000111106                strcoll
+                0x0000000000110c5c                isupper
+                0x000000000011dac0                ide_readsectors
+                0x0000000000111245                strncmp
+                0x000000000011ceb3                sub_zero_return_data
+                0x000000000010d00c                loadDLL
+                0x0000000000116b10                fg_updateinfo
+                0x000000000010faac                bcdtobinary
+                0x00000000001118b6                dex32_tm_showhelp
+                0x00000000001019ef                Dex32PutC
+                0x00000000001112bb                strncpy
+                0x0000000000102e98                dlmalloc
+                0x000000000011f971                vfs_attbstr
+                0x0000000000116ad0                fg_set_state
+                0x0000000000104c02                bsdmalloc_init
+                0x0000000000105793                diskchange
+                0x0000000000102369                setdefaulthandlers
+                0x0000000000116d1b                bridges_ps_findprocess
+                0x00000000001197bb                systemcall
+                0x000000000011772a                createprocess
+                0x000000000011fc06                realloc
+                0x0000000000101511                Dex32NewDDL
+                0x0000000000119270                show_process
+                0x0000000000116739                fg_register
+                0x0000000000101d2c                Dex32GetAttb
+                0x0000000000101337                dex32vga_waitretrace
+                0x000000000010448c                dlmalloc_usable_size
+                0x000000000010cf03                user_exec
+                0x0000000000105229                flopinit
+                0x00000000001114af                strtok
+                0x0000000000120051                clearpagetable
+                0x0000000000110f0c                memcmp
+                0x000000000011037c                outchar
+                0x000000000011b551                pio_rep_outword
+                0x000000000010140e                Dex32GetProcessDevice
+                0x0000000000119e98                api_addsystemcall
+                0x00000000001207ef                dex32_setpageattbblock
+                0x0000000000118a67                free_semaphore
+                0x0000000000105392                waitfdc
+                0x0000000000111c6a                kbd_irq
+                0x0000000000110c23                isalpha
+                0x0000000000112999                kb_ready
+                0x000000000011ba79                reg_reset
+                0x00000000001111e6                strncat
+                0x0000000000114ad0                devmgr_getname
+                0x000000000010da67                add_history
+                0x0000000000111bd1                signal_foreground
+                0x0000000000114f2a                devmgr_setfunction
+                0x0000000000105139                getcache
+                0x0000000000107e43                fread
+                0x0000000000104412                dlpvalloc
+                0x000000000012087a                setgdtentry
+                0x0000000000120d30                sbrk
+                0x0000000000114b01                devmgr_getdevice
+                0x0000000000110b3e                textbackground
+                0x0000000000111967                dex32_tm_updateinfo
+                0x0000000000104dc7                shouldflush
+                0x0000000000108b07                vfs_createlink
+                0x0000000000112b21                kb_pause
+                0x0000000000116f65                script_cleanline
+                0x0000000000108236                vfs_removenode
+                0x0000000000102286                irq_activate
+                0x00000000001197cf                process_init
+                0x00000000001115a6                memset
+                0x000000000010de98                lzo_compress
+                0x0000000000118532                kill_children
+                0x00000000001219e7                main
+                0x0000000000120cbd                commitb
+                0x00000000001138d2                exc_invalidtss
+                0x000000000011fdb3                wbinvd
+                0x000000000011f7bc                vfs_showpathcuts
+                0x000000000010db0e                lzo_decompress
+                0x0000000000107ca1                ftell
+                0x000000000011d69c                tmr_set_timeout
+                0x0000000000105488                fdchandler
+                0x000000000011de76                ide_cdrom_load
+                0x000000000010aade                loadSystemDLL
+                0x000000000011c796                reg_packet
+                0x000000000011b0de                int_restore_int_vect
+                0x000000000010850c                fclose
+                0x0000000000102022                double_fault
+                0x000000000010fdde                time
+                0x000000000010218d                disable_taskswitching
+                0x0000000000116e2c                sync_justwait
+                0x0000000000119f21                api_getsystemcall
+                0x000000000011b22b                pio_inbyte
+                0x0000000000115a55                extension_list
+                0x00000000001007b7                write_regs
+                0x0000000000105830                seek
+                0x000000000011d662                tmr_read_bios_timer
+                0x0000000000104e42                start_priority
+                0x0000000000101658                dd_swaptohardware
+                0x0000000000105ae7                write_block
+                0x0000000000119e8e                dex32_getversion
+                0x0000000000115bbf                env_getenv
+                0x00000000001018bf                Dex32SetScroll
+                0x00000000001103c4                putc
+                0x00000000001148a5                devmgr_init
+                0x00000000001021f5                enable_taskswitching
+                0x000000000011fa44                vfs_rmdir
+                0x00000000001101a8                setx
+                0x000000000011b0d9                int_save_int_vect
+                0x000000000010c857                getstring
+                0x00000000001141ec                hardware_printinfo
+                0x00000000001099ba                rev_str
+                0x0000000000101d6b                Dex32SetDDL
+                0x000000000011fd70                alloc_init
+                0x00000000001110b5                strcmp
+                0x000000000012165a                dex_malloc
+                0x000000000011cee0                sub_setup_command
+                0x0000000000115d3e                env_setenv
+                0x0000000000111674                ttyname
+                0x0000000000107006                vfs_freedirectory
+                0x000000000011e4ec                ide_identify_partition_type
+                0x0000000000119739                getprocessinfo
+                0x0000000000117d23                ps_geterror
+                0x0000000000114f06                devmgr_getcontext
+                0x0000000000110062                delay
+                0x00000000001146fe                getcpubrand
+                0x000000000010a38c                module_call_library
+                0x00000000001065b9                vfs_directread
+                0x000000000010206c                nocoprocessor
+                0x0000000000114f3e                devmgr_getfunction
+                0x00000000001109f7                sprintf
+                0x0000000000117d33                broadcastmessage
+                0x0000000000116ea2                sync_leavecrit
+                0x000000000010c1da                dex32_registerloader
+                0x000000000010d29b                alloc_console
+                0x000000000012189b                dexmalloc_init
+                0x000000000010f71d                console_new
+                0x0000000000110a98                DDLprintf_help
+                0x0000000000113232                pci_detectdevices
+                0x0000000000111150                strcspn
+                0x000000000011e0ee                ide_uni_get_total_sectors
+                0x0000000000104d78                freecache
+                0x000000000010504b                storecache
+                0x00000000001212bc                dex32_commit
+                0x0000000000101e45                program8259
+                0x000000000012182d                dexmalloc_sendmessage
+                0x00000000001082c5                vfs_deletefile
+                0x0000000000118957                dex32_waitpid
+                0x0000000000120bcd                obtainpage
+                0x000000000010225d                irq_init
+                0x0000000000120381                dex32_restoreints
+                0x000000000011896f                findsemaphore
+                0x0000000000120609                freemultiple
+                0x000000000012012f                maplineartophysical2
+                0x000000000011fdc0                mem_interpretmemory
+                0x0000000000111b8a                sendtokeyb
+                0x000000000010c47c                pd_forkmodule
+                0x0000000000104e5b                stop_priority
+                0x0000000000101b96                Dex32GetX
+                0x0000000000115c1f                env_removenode
+                0x0000000000118212                dex32_setservice
+                0x0000000000120bf0                commit
+                0x0000000000101ca9                Dex32GetText
+                0x0000000000106318                floppy_totalblocks
+                0x0000000000120ef2                dex32_copy_pg
+                0x000000000011c352                reg_pio_data_out_lba
+                0x000000000010a28c                importpatch
+                0x000000000011b0d4                int_disable_irq
+                0x0000000000106e75                vfs_setbuffer
+                0x0000000000118a06                set_semaphore
+                0x0000000000120870                dex32_getfreepages
+                0x000000000012072c                setpageattb
+                0x00000000001166a9                fg_setmykeyboard
+                0x00000000001020cd                coprocessor_segment_overrun
+                0x000000000010d50f                console_ls
+                0x000000000010a42c                module_unload_library
+                0x0000000000107660                openfilex
+                0x0000000000109123                vfs_mountdirectory
+                0x00000000001047b4                dlmalloc_init
+                0x000000000011dc7c                switchbyte
+                0x0000000000110bf6                isdigit
+                0x00000000001044f7                dlmallinfo
+                0x000000000010c21c                dex32_unregisterloader
+                0x000000000010604f                format_track
+                0x00000000001054fd                dma_xfer
+                0x0000000000103d6a                dlmemalign
+                0x000000000010845b                fwrite
+                0x0000000000106322                floppy_install
+                0x000000000010031a                outportw
+                0x00000000001016a2                Dex32SetActiveDDL
+                0x000000000011d648                sub_xfer_delay
+                0x00000000001213ae                dex32copyblock
+                0x00000000001189ae                get_semaphore
+                0x000000000011d6dc                tmr_chk_timeout
+                0x0000000000101bba                Dex32SetY
+                0x000000000010565a                block2hts
+                0x0000000000114839                beep
+                0x0000000000118d59                halt
+                0x0000000000112c64                kb_removehotkey
+                0x0000000000114c0b                devmgr_register
+                0x000000000011b181                pio_set_memory_addr
+                0x0000000000110a2d                vprintf_help
+                0x0000000000100415                ports_setattb
+                0x00000000001101f8                gettext
+                0x000000000012098f                setgdt
+                0x0000000000108abd                vfs_removelink
+                0x0000000000101ffd                invalidtss
+                0x0000000000101226                dex32vga_writepixel
+                0x000000000010975c                getdirectory
+                0x0000000000105bb1                fdc_rw
+                0x000000000010674e                vfs_directwrite
+                0x0000000000116f0c                sync_userallocate
+                0x000000000010044a                ports_getstatus
+                0x00000000001185ae                exit
+                0x0000000000117488                ps_enqueue
+                0x000000000012063f                getlinearloc
+                0x000000000010aa88                showlibinfo
+                0x000000000010a76b                relocate
+                0x0000000000115ee2                env_showenv
+                0x00000000001145ec                hardware_getcpuinfo
+                0x0000000000101f67                CPUint
+                0x000000000010650a                vfs_checkopenfiles
+                0x0000000000121939                vmm_pagein
+                0x0000000000113abb                exc_showdump
+                0x000000000011e188                ide_uni_read_block
+                0x0000000000111751                atoi
+                0x0000000000110276                textattr
+                0x000000000011e435                ide_write_block_partition
+                0x0000000000116e54                sync_entercrit
+                0x000000000011bcbc                reg_non_data
+                0x00000000001171e0                getparentid
+                0x0000000000111718                strupr
+                0x0000000000118cbf                freeprocessmemory
+                0x000000000010ffb1                time_handler
+                0x0000000000101806                Dex32SetTextAttr
+                0x000000000010579d                motoron
+                0x000000000011af34                api_syscall
+                0x0000000000116e1d                bridges_init
+                0x000000000011b6c6                reg_config
+                0x00000000001113d2                strspn
+                0x0000000000107105                vfs_unmount
+                0x000000000010030e                outportl
+                0x0000000000114a73                devmgr_removedevice
+                0x00000000001111ab                strlen
+                0x0000000000116d62                bridges_link
+                0x0000000000111607                toupper
+                0x0000000000101fb3                seg_error
+                0x000000000011f826                vfs_getpathcut
+                0x000000000011f4b3                ide_init
+                0x0000000000115b3e                env_getstring
+                0x00000000001035e4                dlfree
+                0x00000000001046a2                dlmalloc_stats
+                0x000000000010c2c7                dex32_loader
+                0x0000000000111060                strchr
+                0x000000000010530a                getbyte
+                0x000000000011877c                findprocessname
+                0x00000000001208db                addgdt
+                0x0000000000112b56                kb_getchar
+                0x00000000001072d9                vfs_mount_device
+                0x000000000010181e                Dex32SetTextColor
+                0x0000000000117d0f                ps_seterror
+                0x000000000011b29a                pio_inword
+                0x0000000000107f03                fgetsectors
+                0x00000000001057e2                motoroff
+                0x0000000000110396                println
+                0x0000000000101f80                unhandled
+                0x000000000011b0ca                int_enable_irq
+                0x0000000000112fa6                init_keyboard
+                0x00000000001206e9                getmultiple
+                0x0000000000112cfb                kb_addhotkey
+                0x0000000000101ba1                Dex32GetY
+                0x0000000000120a44                setattb
+                0x000000000010fedf                time_incrementtime
+                0x00000000001022c8                irq_addhandler
+                0x000000000011017e                getx
+                0x000000000010c356                addmodule
+                0x0000000000108798                mkdir
+                0x0000000000113680                pci_getvendorname
+                0x0000000000108658                mkvirtualdir
+                0x0000000000109063                parsedir
+                0x0000000000117544                forkprocess
+                0x0000000000110b13                textcolor
+                0x000000000010c283                dex32_initloader
+                0x000000000010fc43                getdatetime
+                0x00000000001100c1                dex32_set_timer
+                0x00000000001152d3                devmgr_tweak_by_ID
+                0x000000000011131c                strpbrk
+                0x0000000000111c13                kill_foreground
+                0x000000000011fcf3                free
+                0x000000000011c3d1                reg_pio_data_out
+                0x000000000011014c                time_init
+                0x0000000000104fad                getcand
+ *fill*         0x0000000000122009        0x3 00
+ .text          0x000000000012200c      0x35f scheduler.o
+                0x00000000001220ba                sched_enqueue
+                0x0000000000122088                sched_attach
+                0x000000000012200c                scheduler
+                0x00000000001220a6                sched_getcurrentprocess
+                0x0000000000122182                sched_findprocess
+                0x0000000000122148                sched_dequeue
+                0x00000000001221e9                sched_listprocess
+                0x000000000012228a                ps_scheduler_install
+                0x00000000001220b0                sched_gethead
+ *fill*         0x000000000012236b        0x1 00
+ .text          0x000000000012236c      0x7af iomgr.o
+                0x0000000000122452                iomgr_flushmgr
+                0x00000000001228b3                dex32_closeIO
+                0x0000000000122843                dex32_IOcomplete
+                0x000000000012236c                iomgr_init
+                0x0000000000122749                IOmgr_obtainjob
+                0x00000000001228e4                dex32_requestIO
+                0x000000000012247b                iomgr_diskmgr
+ *fill*         0x0000000000122b1b        0x1 00
+ .text          0x0000000000122b1c      0x291 perf.o
+                0x0000000000122d17                perf_printstats
+                0x0000000000122c9f                perf_resetcounters
+                0x0000000000122be7                perf_record
+                0x0000000000122b1c                perf_new_entity
+ *fill*         0x0000000000122dad        0x3 00
+ .text          0x0000000000122db0      0xaaf cache.o
+                0x0000000000122e5f                cache_invalidatecache
+                0x0000000000122db0                cache_initialize
+                0x00000000001231a7                cache_storecache
+                0x00000000001236c2                cache_info_fetch
+                0x0000000000122ed4                cache_shouldflush
+                0x00000000001233c5                cache_interface_write_block
+                0x0000000000122e99                cache_free
+                0x0000000000123705                cache_sendmessage
+                0x0000000000123446                cache_interface_flush_device
+                0x0000000000122f3f                cache_flush
+                0x0000000000123215                cache_getcache
+                0x0000000000123491                cache_generate_interface
+                0x0000000000123461                cache_interface_getcache
+                0x0000000000123033                cache_getcand
+                0x000000000012365e                cache_addnode
+                0x00000000001230b9                cache_store
+                0x0000000000123326                cache_interface_invalidate_cache
+                0x00000000001237f8                cache_start_provider
+                0x0000000000123341                cache_interface_read_block
+ *fill*         0x000000000012385f        0x1 00
+ .text          0x0000000000123860     0x16ca minilzo.o
+                0x00000000001238d7                _lzo_version_date
+                0x0000000000123b26                lzo_memcmp
+                0x0000000000124857                lzo1x_decompress_safe
+                0x000000000012427c                lzo1x_1_compress
+                0x00000000001238c3                lzo_version_date
+                0x0000000000123baa                _lzo_config_check
+                0x0000000000123b89                lzo_memset
+                0x00000000001238a5                lzo_copyright
+                0x0000000000123871                __lzo_align_gap
+                0x00000000001238b9                lzo_version_string
+                0x00000000001243d7                lzo1x_decompress
+                0x0000000000123c36                __lzo_init_v2
+                0x00000000001238cd                _lzo_version_string
+                0x00000000001238af                lzo_version
+                0x0000000000123860                __lzo_ptr_linear
+                0x0000000000123b47                lzo_memcpy
+                0x00000000001238e1                lzo_adler32
+                0x0000000000123b68                lzo_memmove
+ *fill*         0x0000000000124f2a        0x2 00
+ .text          0x0000000000124f2c       0xe7 stdout.o
+                0x0000000000124f4a                stdout_put_char
+                0x0000000000124f2c                stdout_ready_put
+                0x0000000000124f6d                register_stdout
+                0x0000000000124f36                stdout_ready_get
+                0x0000000000124f68                stdout_init
+                0x0000000000124f40                stdout_get_char
+ *fill*         0x0000000000125013        0x1 00
+ .text          0x0000000000125014     0x3a96 fat.o
+                0x00000000001265fe                fat_rewritefileEX
+                0x00000000001263cd                update_fats
+                0x0000000000128840                fat_get_fat_type
+                0x0000000000125b0f                loadroot
+                0x000000000012646c                update_dirs_fats
+                0x0000000000127601                fat_mount_root
+                0x00000000001287f9                fat_get_eoc
+                0x0000000000126660                fat_modifyattb
+                0x0000000000125d58                file12tostr
+                0x00000000001253cb                clustertoblock
+                0x00000000001260ea                fat_getfileblocks
+                0x0000000000127938                fat_mount
+                0x0000000000127844                unicodetoascii
+                0x0000000000126bd5                fat_rewritefile
+                0x00000000001254de                readBPB
+                0x00000000001257df                fat_writecluster
+                0x0000000000125f26                fat_createlink
+                0x000000000012789e                fat_mountdirectory
+                0x0000000000125014                obtain_next_cluster
+                0x000000000012572e                debug_printbuf
+                0x00000000001258be                fat_loaddirectoryfromcluster
+                0x0000000000125feb                fat_getfreeblocks
+                0x0000000000125a68                fat_validatefilename
+                0x000000000012567d                loadfat
+                0x00000000001260bd                fat_getbytesperblock
+                0x00000000001261b1                get_sector_fromcluster
+                0x0000000000127da7                obtainfreecluster
+                0x0000000000125856                fat_writeblock
+                0x00000000001287af                loadfile12
+                0x0000000000125534                interpretBPB
+                0x00000000001251c5                fat_write_cluster
+                0x000000000012617b                getdirsectorsize
+                0x0000000000127e01                fillsectorinfo
+                0x0000000000125c2b                strtofile12
+                0x00000000001283c9                loadfile12EX2
+                0x0000000000127fc2                writefile12EX2
+                0x00000000001289a8                fat_register
+                0x00000000001255a0                fat_diskdiagnostics
+                0x00000000001282f6                fat_openfileEX
+                0x00000000001256ef                loaddirectory
+                0x0000000000125e59                fat_writefileEX
+                0x0000000000125768                fat_readcluster
+                0x00000000001254a9                fat_sectors_per_fat
+                0x00000000001264b3                fat_getsectorsizeEX
+                0x000000000012678f                fat_addsectors
+                0x00000000001269e8                fat_deletefile
+                0x0000000000126250                update_dirs
+                0x0000000000125f98                fat_createfileEX
+                0x0000000000126d9c                fat_createfile
+ *fill*         0x0000000000128aaa        0x2 00
+ .text          0x0000000000128aac      0x915 iso9660.o
+                0x000000000012905d                iso9660_mountdirectory
+                0x0000000000128f2d                iso9660_getbytesperblock
+                0x000000000012931b                iso9660_init
+                0x0000000000128e7d                iso9660_convertname
+                0x0000000000129031                iso9660_unmount
+                0x0000000000128ebe                iso9660_iso_unicodetoascii
+                0x0000000000129130                iso9660_mount
+                0x0000000000128aac                iso9660_loaddirectory
+                0x0000000000128f37                iso9660_openfile
+                0x0000000000128b45                iso9660_mountroot
+                0x00000000001290cc                iso9660_isjoliet
+ *fill*         0x00000000001293c1        0x3 00
+ .text          0x00000000001293c4      0xbb6 devfs.o
+                0x0000000000129eaf                devfs_init
+                0x0000000000129ddc                devfs_nullreadwrite_block
+                0x0000000000129de6                devfs_nullinit
+                0x00000000001297d6                devfs_openfile
+                0x0000000000129ba9                devfs_mountroot
+                0x0000000000129dfa                devfs_initnull
+                0x0000000000129df0                devfs_nulltotalblocks
+                0x0000000000129dd2                devfs_nullgetcache
+                0x00000000001293d3                devfs_addsectors
+                0x00000000001293ce                devfs_rewritefile
+                0x00000000001297cc                devfs_createfile
+                0x0000000000129b9f                devfs_createlink
+                0x00000000001293dd                devfs_writefile
+                0x00000000001293c4                devfs_getbytesperblock
+ *fill*         0x0000000000129f7a        0x6 00
+ .text          0x0000000000129f80      0x1d1 irqwrap.o
+                0x0000000000129fde                irq1wrapper
+                0x000000000012a001                irq2wrapper
+                0x0000000000129fc6                kbdwrapper
+                0x000000000012a10c                gpfwrapper
+                0x000000000012a0f6                div_wrapper
+                0x000000000012a138                pfwrapper
+                0x000000000012a024                irq3wrapper
+                0x0000000000129fa4                copwrapper
+                0x000000000012a0b0                irq7wrapper
+                0x0000000000129f92                CPUintwrapper
+                0x000000000012a047                irq4wrapper
+                0x000000000012a08d                irq6wrapper
+                0x0000000000129f80                syscallwrapper
+                0x0000000000129f9a                fdcwrapper
+                0x000000000012a122                invalidtsswrapper
+                0x000000000012a06a                irq5wrapper
+                0x000000000012a0d3                irq8wrapper
+                0x0000000000129fac                timerwrapper
+ *fill*         0x000000000012a151        0x3 00
+ .text          0x000000000012a154      0x2e2 devmgr_error.o
+                0x000000000012a154                get_function_name
+ *fill*         0x000000000012a436        0xa 00
+ .text          0x000000000012a440      0x608 asmlib.o
+                0x000000000012a56f                pci_writeconfigdword
+                0x000000000012a440                testandset
+                0x000000000012a523                pci_writeconfigbyte
+                0x000000000012a758                refreshpages
+                0x000000000012a549                pci_writeconfigword
+                0x000000000012a705                switchprocess
+                0x000000000012a677                reptrans
+                0x000000000012a5c1                invtlb
+                0x000000000012a6eb                restoreflags
+                0x000000000012a860                itoa
+                0x000000000012a78b                enablepaging
+                0x000000000012a501                pci_readconfigdword
+                0x000000000012a6d7                storeflags
+                0x000000000012a4bd                pci_readconfigbyte
+                0x000000000012a6fd                switchuserprocess
+                0x000000000012a7b6                getCR0
+                0x000000000012a7ba                setCR0
+                0x000000000012a79b                enablepaging_pae
+                0x000000000012a6f5                loadtsr
+                0x000000000012a48e                pci_findclass
+                0x000000000012a62e                repoutword
+                0x000000000012a91c                move_cursor
+                0x000000000012a74b                setpagedir
+                0x000000000012a5ea                repindword
+                0x000000000012a4df                pci_readconfigword
+                0x000000000012a60a                repoutdword
+                0x000000000012a8cf                gotoxy
+                0x000000000012a653                repoutbyte
+                0x000000000012a726                loadregisters
+                0x000000000012a45c                pci_finddevice
+                0x000000000012a697                getcpuid
+                0x000000000012a778                disablepaging
+                0x000000000012a595                pcibios_call
+                0x000000000012a72e                offcomputer
+                0x000000000012a5c9                repinword
+                0x000000000012b000                . = ALIGN (0x1000)
+ *fill*         0x000000000012aa48      0x5b8 00
+
+.rodata         0x000000000012b000     0x4cb4
+ .rodata        0x000000000012b000     0x4467 kernel32.o
+ *fill*         0x000000000012f467        0x1 00
+ .rodata        0x000000000012f468       0x70 scheduler.o
+ .rodata        0x000000000012f4d8      0x109 iomgr.o
+ .rodata        0x000000000012f5e1       0x34 perf.o
+ *fill*         0x000000000012f615        0x3 00
+ .rodata        0x000000000012f618       0x7f cache.o
+ .rodata        0x000000000012f697       0x16 minilzo.o
+                0x000000000012f697                __lzo_copyright
+ .rodata        0x000000000012f6ad       0x21 stdout.o
+ *fill*         0x000000000012f6ce        0x2 00
+ .rodata        0x000000000012f6d0      0x2a0 fat.o
+ .rodata        0x000000000012f970      0x1fa iso9660.o
+ .rodata        0x000000000012fb6a       0x2f devfs.o
+ .rodata        0x000000000012fb99      0x11b devmgr_error.o
+
+.data           0x000000000012fcc0     0x2340
+                0x000000000012fcc0                data = .
+                0x000000000012fcc0                _data = .
+                0x000000000012fcc0                __data = .
+ *(.data)
+ .data          0x000000000012fcc0        0xa startup.o
+                0x000000000012fcc0                multiboothdr
+ *fill*         0x000000000012fcca       0x16 00
+ .data          0x000000000012fce0     0x1c78 kernel32.o
+                0x0000000000131834                reg_atapi_max_bytes
+                0x000000000012ffa0                g_320x200x256
+                0x000000000012fd18                userspace
+                0x000000000012fd44                kb_current_set
+                0x000000000012ff60                g_640x480x16
+                0x000000000012fcfc                lmodeproc_next
+                0x0000000000131830                pio_xfer_width
+                0x0000000000131940                tmr_time_out
+                0x0000000000131838                dex32_versionstring
+                0x000000000012fd10                linux_userspace
+                0x000000000012fd14                sharedmemloc
+                0x000000000012fd28                dex_idtbase
+                0x000000000012fd0c                syscallstack
+                0x000000000012fd20                stackbase
+                0x000000000012fd24                kernelbase
+                0x000000000012fd2c                dex_gdtbase
+                0x000000000012fde0                g_80x25_text
+                0x000000000012fe20                g_80x50_text
+                0x000000000012fd04                userstackloc
+                0x000000000012fee0                g_640x480x2
+                0x0000000000131828                pio_base_addr1
+                0x00000000001318a0                pci_vendors
+                0x000000000012fce8                totalgdtentries
+                0x000000000012ff20                g_320x200x4
+                0x0000000000131840                ts_enabled
+                0x000000000012ffe0                g_320x200x256_modex
+                0x0000000000131848                lib_nextid
+                0x000000000012fea0                g_90x60_text
+                0x000000000012fcf4                kmodeproc_next
+                0x000000000012fce0                context_switch_rate
+                0x000000000012fce4                scr_debug
+                0x00000000001318e0                pci_devices
+                0x000000000012fd60                g_40x25_text
+                0x000000000012fd30                ints_enabled
+                0x0000000000131860                time_monthdays
+                0x000000000012fcf0                kmodeproc
+                0x0000000000131948                devTypeStr
+                0x0000000000131820                usecache
+                0x0000000000131844                vfs_nextfileid
+                0x000000000012fd00                knext
+                0x000000000013183c                apmloc
+                0x000000000012fda0                g_40x50_text
+                0x000000000012fe60                g_90x30_text
+                0x000000000013182c                pio_base_addr2
+                0x000000000012fcec                kbaseheap
+                0x000000000012fd08                userheap
+                0x000000000012fcf8                lmodeproc
+                0x000000000012fd1c                stackbase_end
+                0x0000000000131900                nextprocessid
+ .data          0x0000000000131958        0x0 scheduler.o
+ .data          0x0000000000131958        0x8 iomgr.o
+                0x0000000000131958                flush_time
+                0x000000000013195c                flushok
+ .data          0x0000000000131960        0x0 perf.o
+ .data          0x0000000000131960        0x0 cache.o
+ .data          0x0000000000131960        0x0 minilzo.o
+ .data          0x0000000000131960        0x0 stdout.o
+ .data          0x0000000000131960        0x0 fat.o
+ .data          0x0000000000131960        0x0 iso9660.o
+ .data          0x0000000000131960        0x0 devfs.o
+ .data          0x0000000000131960        0x0 devmgr_error.o
+ .data          0x0000000000131960        0xd asmlib.o
+                0x0000000000131963                idtr_x
+                0x0000000000131960                CsrX
+                0x0000000000131962                attb
+                0x0000000000131961                CsrY
+                0x0000000000132000                . = ALIGN (0x1000)
+ *fill*         0x000000000013196d      0x693 00
+                0x0000000000132000                end = .
+                0x0000000000132000                _end = .
+                0x0000000000132000                __end = .
+
+.bss            0x0000000000132000    0x174ec
+                0x0000000000132000                bss = .
+                0x0000000000132000                _bss = .
+                0x0000000000132000                __bss = .
+ *(.bss)
+ .bss           0x0000000000132000    0x10a2c kernel32.o
+                0x0000000000132188                int_irq_number
+                0x0000000000132008                totalmemory
+                0x0000000000132184                int_use_intr_flag
+                0x0000000000132080                freebusy
+                0x0000000000132164                sched_sysmes
+                0x00000000001320ac                tm_pid
+                0x00000000001320a4                time_count
+                0x0000000000132150                sigpriority
+                0x0000000000132068                fg_state
+                0x0000000000132054                env_busywait
+                0x000000000013209c                call_loader
+                0x0000000000132194                ide_ready
+                0x0000000000132148                sync_handles_list
+                0x0000000000132040                floppy_sigpriority
+                0x00000000001320a0                loader_total
+                0x0000000000132048                extension_busy
+                0x0000000000132014                pd_handlecounter
+                0x0000000000132030                busy
+                0x00000000001321a4                mem_nextptr
+                0x00000000001320a8                aux_time2
+                0x0000000000132180                semactive
+                0x000000000013207c                alloc_ready
+                0x0000000000132090                vfs_root
+                0x00000000001320b0                dex32_tm_active
+                0x000000000013215c                sigshutdown
+                0x0000000000132020                esc_mode
+                0x000000000013208c                file_globalopen
+                0x0000000000132154                sigterm
+                0x00000000001321ac                mbhdr
+                0x0000000000132050                extension_table
+                0x000000000013214c                totalprocesses
+                0x0000000000132018                pd_busy
+                0x0000000000132170                ps_notimeincrement
+                0x00000000001320b4                pci_num
+                0x0000000000132098                lastlibrary
+                0x00000000001320c0                pci
+                0x0000000000132140                pci_type
+                0x000000000013203c                floppy_deviceid
+                0x0000000000132004                totalpages
+                0x0000000000132029                ostatus
+                0x000000000013219c                first_block
+                0x0000000000132160                pfoccured
+                0x000000000013206c                console_first
+                0x00000000001321a0                last_block
+                0x000000000013204c                extension_ps_ready
+                0x0000000000132034                hotkey_list
+                0x000000000013218c                int_int_vector
+                0x0000000000132178                next_process
+                0x0000000000132190                pio_memory_dt_opt
+                0x0000000000132024                start_ps
+                0x0000000000132198                ide_total_partition
+                0x00000000001321b0                startup_parameters
+                0x000000000013217c                suspendsem
+                0x0000000000132088                vfs_path_cut_head
+                0x000000000013200c                auxillary_malloc_base
+                0x0000000000132038                kb_totalhotkeys
+                0x0000000000132078                ticks
+                0x0000000000132094                firstlibrary
+                0x0000000000132028                statusbits
+                0x000000000013201c                pd_ready
+                0x0000000000132058                env_head
+                0x0000000000132174                current_process
+                0x00000000001321a8                fg_kernel
+                0x000000000013205c                fg_current
+                0x000000000013202c                deq_busy
+                0x0000000000132064                fg_started
+                0x0000000000132010                pd_head
+                0x0000000000132084                total
+                0x0000000000132144                sync_handles_totalitems
+                0x0000000000132074                totalDDL
+                0x0000000000132060                fg_myslot
+                0x0000000000132070                ActiveDDL
+                0x0000000000132000                map_length
+                0x0000000000132158                sigwait
+                0x0000000000132044                pio_memory_seg
+ .bss           0x0000000000142a2c        0x0 scheduler.o
+ .bss           0x0000000000142a2c       0x20 iomgr.o
+                0x0000000000142a2c                IOmgr_pause
+                0x0000000000142a44                perf_monwrite
+                0x0000000000142a3c                io_flushid
+                0x0000000000142a38                forceflush
+                0x0000000000142a48                perf_monread
+                0x0000000000142a40                flushing
+                0x0000000000142a30                IOrequest_time
+                0x0000000000142a34                flush_counter
+ .bss           0x0000000000142a4c        0x4 perf.o
+                0x0000000000142a4c                perf_total_entries
+ .bss           0x0000000000142a50        0x4 cache.o
+                0x0000000000142a50                cache_head_ptr
+ .bss           0x0000000000142a54        0x4 minilzo.o
+                0x0000000000142a54                __lzo_init_done
+ .bss           0x0000000000142a58        0x0 stdout.o
+ .bss           0x0000000000142a58        0x0 fat.o
+ .bss           0x0000000000142a58        0x4 iso9660.o
+                0x0000000000142a58                iso9660_myid
+ .bss           0x0000000000142a5c        0x4 devfs.o
+                0x0000000000142a5c                devfs_myid
+ .bss           0x0000000000142a60        0x0 devmgr_error.o
+                0x0000000000143000                . = ALIGN (0x1000)
+ *fill*         0x0000000000142a60      0x5a0 00
+ COMMON         0x0000000000143000     0x3050 kernel32.o
+                0x0000000000143000                fg_out
+                0x0000000000143020                curp
+                0x0000000000143340                mount_table
+                0x000000000014373c                bridges_call
+                0x0000000000143740                kb_busywait
+                0x0000000000143784                pagedir1
+                0x0000000000143788                homedir
+                0x00000000001437a0                time_systime
+                0x00000000001437c0                schedp
+                0x00000000001437e0                schedpPCB
+                0x0000000000143afc                foreground
+                0x0000000000143b00                errno
+                0x0000000000143b04                reg_atapi_reg_fr
+                0x0000000000143b08                devmgr_statuslist
+                0x0000000000143b0c                op_success
+                0x0000000000143b20                devmgr_busy
+                0x0000000000143b80                fg_busywait
+                0x0000000000143bc4                reg_atapi_reg_dh
+                0x0000000000143bc8                oldkeybfocus
+                0x0000000000143bcc                esc_2
+                0x0000000000143be0                pfPCB_copy
+                0x0000000000143f00                ide_partitions
+                0x0000000000143fa0                portinfo
+                0x0000000000143fc0                kernelPCB
+                0x00000000001442dc                dma_pci_prd_addr
+                0x00000000001442e0                fg_vconsoles
+                0x0000000000144340                fdcbuf
+                0x0000000000144544                consoleDDL
+                0x0000000000144548                fg_fginfo
+                0x000000000014454c                fg_pid
+                0x0000000000144550                cacheptr
+                0x0000000000144554                reg_atapi_cp_size
+                0x0000000000144560                dex32_loaders
+                0x00000000001445b0                memamount
+                0x00000000001445b4                tmr_cmd_time_out_time
+                0x00000000001445c0                irq_attachlist
+                0x0000000000144600                esc_1
+                0x0000000000144604                portstatus
+                0x0000000000144608                pcibios
+                0x0000000000144610                int_intr_flag
+                0x0000000000144620                hardware_mycpu
+                0x0000000000144680                vfs_busy
+                0x00000000001446c4                memory_map
+                0x00000000001446e0                api_syscalltable
+                0x00000000001452e0                pfPCB
+                0x00000000001455fc                reg_config_info
+                0x0000000000145604                taskmgrfg
+                0x0000000000145608                pio_last_read
+                0x0000000000145614                kbd_status
+                0x0000000000145620                sPCB
+                0x0000000000145940                pio_reg_addrs
+                0x0000000000145980                ps_kernelfpustate
+                0x0000000000145a00                keyPCB
+                0x0000000000145d1c                kernel_systeminfo
+                0x0000000000145d34                reg_atapi_reg_sn
+                0x0000000000145d38                tm_before
+                0x0000000000145d40                ide_drivelist
+                0x0000000000145ea0                processmgr_busy
+                0x0000000000145ee4                reg_atapi_delay_flag
+                0x0000000000145f00                mallocbusy
+                0x0000000000145f44                pcibiosentry
+                0x0000000000145f4c                devmgr_devlist
+                0x0000000000145f60                reg_cmd_info
+                0x0000000000145fac                semaphore_head
+                0x0000000000145fb0                dma_pci_sff_reg_addr
+                0x0000000000145fb4                taskmgr_fgid
+                0x0000000000145fb8                plast
+                0x0000000000145fbc                reg_slow_xfer_flag
+                0x0000000000145fc0                tlb_address
+                0x0000000000145fc4                reg_atapi_reg_sc
+                0x0000000000145fc5                pio_last_write
+                0x0000000000145fcf                reg_atapi_cp_data
+                0x0000000000145fe0                ps_fpustate
+                0x000000000014604c                taskmgrout
+ *fill*         0x0000000000146050       0x10 00
+ COMMON         0x0000000000146060      0x160 scheduler.o
+                0x0000000000146060                ps_scheduler
+                0x00000000001461b8                ps_schedid
+                0x00000000001461bc                sched_phead
+ COMMON         0x00000000001461c0       0x4c iomgr.o
+                0x00000000001461c0                IOrequest_busy
+                0x0000000000146204                cur
+                0x0000000000146208                IOjob
+ *fill*         0x000000000014620c       0x14 00
+ COMMON         0x0000000000146220     0x32c8 perf.o
+                0x0000000000146220                perf_entitytable
+ COMMON         0x00000000001494e8        0x4 fat.o
+                0x00000000001494e8                fat_deviceid
+LOAD startup.o
+LOAD kernel32.o
+LOAD scheduler.o
+LOAD iomgr.o
+LOAD perf.o
+LOAD cache.o
+LOAD minilzo.o
+LOAD stdout.o
+LOAD fat.o
+LOAD iso9660.o
+LOAD devfs.o
+LOAD irqwrap.o
+LOAD devmgr_error.o
+LOAD asmlib.o
+OUTPUT(kernel32.bin binary)
+
+.comment        0x0000000000000000      0x22b
+ .comment       0x0000000000000000       0x1f startup.o
+ .comment       0x000000000000001f       0x2a kernel32.o
+ .comment       0x0000000000000049       0x2a scheduler.o
+ .comment       0x0000000000000073       0x2a iomgr.o
+ .comment       0x000000000000009d       0x2a perf.o
+ .comment       0x00000000000000c7       0x2a cache.o
+ .comment       0x00000000000000f1       0x2a minilzo.o
+ .comment       0x000000000000011b       0x2a stdout.o
+ .comment       0x0000000000000145       0x2a fat.o
+ .comment       0x000000000000016f       0x2a iso9660.o
+ .comment       0x0000000000000199       0x2a devfs.o
+ .comment       0x00000000000001c3       0x1f irqwrap.o
+ .comment       0x00000000000001e2       0x2a devmgr_error.o
+ .comment       0x000000000000020c       0x1f asmlib.o
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 kernel32.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 scheduler.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 iomgr.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 perf.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 cache.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 minilzo.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 stdout.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 fat.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 iso9660.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 devfs.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 devmgr_error.o

@@ -1,0 +1,32 @@
+OUTPUT_FORMAT("binary") 
+ENTRY(_startup) 
+SECTIONS 
+{ 
+.text 0x100000 : 
+{ 
+code = .; _code = .; __code = .; 
+*(.text) 
+. = ALIGN(4096); 
+} 
+
+.data : 
+{ 
+data = .; _data = .; __data = .; 
+*(.data) 
+. = ALIGN(4096); 
+} 
+
+end = .; _end = .; __end = .;
+
+.bss :
+{ 
+bss = .; _bss = .; __bss = .; 
+*(.bss) 
+. = ALIGN(4096); 
+} 
+
+
+} 
+INPUT(startup.o kernel32.o scheduler.o iomgr.o perf.o cache.o stdout.o fat.o iso9660.o
+      devfs.o irqwrap.o devmgr_error.o asmlib.o )
+OUTPUT(kernel32.bin)
